@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.*;
 
 interface Bank {
-	//void CreateAccount();
+	void CreateAccount();
 	void Deposit(double amount);
 	void Withdraw(double amount) throws InsuffiecientBalanceException;
 	double GetBalance();
@@ -16,6 +16,9 @@ class SBI implements Bank {
     private double interestRate;
 
     private double totalAmount;
+
+	public void CreateAccount(){}
+
 
     public SBI() {
         interestRate = 4.5;
@@ -63,6 +66,9 @@ class HDFC implements Bank {
 
     private double totalAmount;
 
+	public void CreateAccount(){}
+
+
     public HDFC() {
         interestRate = 5.5;
     }
@@ -108,6 +114,9 @@ class ICICI implements Bank {
     private double interestRate;
 
     private double totalAmount;
+
+	public void CreateAccount(){}
+
 
     public ICICI() {
         interestRate = 6.5;
@@ -210,7 +219,7 @@ class Person extends SBI {
         System.out.println("Annual Interest : " + GetAnnualInterest());
     }
  
-    public void CreateAccount(){}
+   // public void CreateAccount(){}
 
 }
 
@@ -232,16 +241,15 @@ public class Main
             System.out.println("Enter Person id : ");
             int pId = scn.nextInt();
             System.out.println("Enter Person name : ");
-            scn.nextLine();
-            String pName = scn.nextLine();
+            String pName = scn.next();
             System.out.println("Enter Person email : ");
-            String email = scn.nextLine();
+            String email = scn.next();
             System.out.println("Enter your type of account : ");
-            String typeOfAccount = scn.nextLine();
+            String typeOfAccount = scn.next();
             System.out.println("Enter Person account number : ");
             int accountNumber = scn.nextInt();
             System.out.println("Enter your bank name : ");
-            String bankName = scn.nextLine();   
+            String bankName = scn.next();   
 
 	 
 
@@ -282,6 +290,7 @@ public class Main
 
                     case 5:
                         System.out.println("Good bye...");
+			//System.exit(0);
                         break;
 
                 }
